@@ -2,6 +2,9 @@ syntax = "proto3";
 
 package calculator;
 
+// Configuração do nome do pacote para o Go
+option go_package = "protobuf/operations";
+
 message OperationRequest {
   double a = 1;
   double b = 2;
