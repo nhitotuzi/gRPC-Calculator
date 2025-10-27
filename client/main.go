@@ -44,6 +44,17 @@ func main() {
 			break
 		}
 
+		switch op {
+		case "add", "sub", "mul", "div":
+			// Válido
+		default:
+			log.Printf("Operação inválida: %s", op)
+			continue
+		}
+
+		// Resposta da operação.
+		var r *pb.OperationResponse
+
 		var a, b float64
 
 		fmt.Print("Digite o primeiro operando: ")
@@ -56,17 +67,6 @@ func main() {
 			A: a,
 			B: b,
 		}
-
-		switch op {
-		case "add", "sub", "mul", "div":
-			// Válido
-		default:
-			log.Printf("Operação inválida: %s", op)
-			continue
-		}
-
-		// Resposta da operação.
-		var r *pb.OperationResponse
 
 		switch op {
 		case "add":
